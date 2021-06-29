@@ -6,7 +6,7 @@ description: |
   A small application to select a browser every time you click a link anywhere. This is especially useful if you have multiple browsers or profiles, and you want to be able to open certain links in certain browsers. Very useful for web developers, but also for a lot of other people.
 
 grade: stable # must be 'stable' to release into candidate/stable channels
-confinement: strict # use 'strict' once you have the right plugs and slots
+confinement: classic # use 'strict' once you have the right plugs and slots
 
 architectures:
   - build-on: [amd64, armhf]
@@ -26,6 +26,7 @@ parts:
       - appstream-util
       - gsettings-desktop-schemas-dev
       - gettext
+      - libcanberra-dev
       - libgtk-3-dev
     stage-packages:
       - python3-gi
@@ -36,6 +37,3 @@ apps:
   braus:
     command: usr/bin/braus
     desktop: usr/share/applications/com.properlypurple.braus.desktop
-    plugs:
-        - gsettings
-        - browser-support
