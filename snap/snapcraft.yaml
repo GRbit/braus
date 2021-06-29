@@ -18,11 +18,9 @@ parts:
     source: https://github.com/thecodejedi/braus.git
     # See 'snapcraft plugins'
     plugin: meson
-    meson-parameters: [--prefix=/snap/braus/current/usr]
+    meson-parameters: [--prefix=/usr]
     build-packages:
       - gettext
-    organize:
-      snap/braus/current/usr: usr
 
 apps:
   braus:
@@ -31,14 +29,6 @@ apps:
     extensions: [gnome-3-38]
     plugs:
         - desktop
+        - desktop-legacy
         - gsettings
         - browser-support
-    slots:
-      - dbus-daemon
-    common-id: com.properlypurple.braus
-
-slots:
-  dbus-daemon:
-    interface: dbus
-    bus: session
-    name: com.properlypurple.braus
