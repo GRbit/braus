@@ -24,7 +24,7 @@ import gettext
 
 if "SNAP" in os.environ:
 	SNAP = os.environ["SNAP"]
-	VERSION = "0.3.0"
+	VERSION = "@VERSION@"
 	pkgdatadir = "usr/share/braus"
 	localedir = "usr/share/locale"
 	sys.path.insert(1, f"{SNAP}/{pkgdatadir}")
