@@ -34,13 +34,13 @@ else:
 	localedir = "@localedir@"
 	sys.path.insert(1, pkgdatadir)
 
-sys.path.insert(1, pkgdatadir)
 signal.signal(signal.SIGINT, signal.SIG_DFL)
 gettext.install('braus', localedir)
 
 if __name__ == '__main__':
     import gi
     gi.require_version('Gtk', '3.0')
+    gi.require_version('Gdk', '3.0')
 
     from braus import main
     sys.exit(main.main(VERSION))
