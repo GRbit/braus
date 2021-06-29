@@ -3,3 +3,4 @@ builddir
 .vscode
 __pycache__
 *.snap
+prime
