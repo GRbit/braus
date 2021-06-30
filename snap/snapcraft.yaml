@@ -24,6 +24,7 @@ parts:
     stage-packages:
       - python3-gi
       - libcanberra-gtk3-module
+      - libcanberra-gtk3-0
       - gir1.2-gtk-3.0
 apps:
   braus:
@@ -31,7 +32,12 @@ apps:
     desktop: usr/share/applications/com.properlypurple.braus.desktop
     extensions: [gnome-3-38]
     plugs:
+        - home
+        - unity7
         - desktop
         - desktop-legacy
         - gsettings
         - browser-support
+        - wayland
+        - x11
+        - system-observe
