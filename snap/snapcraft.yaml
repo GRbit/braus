@@ -21,7 +21,10 @@ parts:
     meson-parameters: [--prefix=/usr]
     build-packages:
       - gettext
-
+    stage-packages:
+      - python3-gi
+      - libcanberra-gtk3-module
+      - gir1.2-gtk-3.0
 apps:
   braus:
     command: usr/bin/braus
